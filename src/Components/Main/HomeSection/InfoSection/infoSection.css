@@ -1,0 +1,48 @@
+.info-section {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-evenly;
+
+	width: 100vw;
+	height: 40vh;
+	padding: 15px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	background-color: white;
+}
+
+.info-section-element {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 30%;
+	background-color: white;
+}
+
+.info-section-element > span {
+	font-size: 5rem;
+	margin-bottom: 20px;
+}
+
+.info-section-element > h3 {
+	font-size: 2rem;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.info-section-element div > p {
+	margin-bottom: 15px;
+	font-size: 1.5rem;
+	font-weight: 400;
+	text-align: justify;
+}
+
+.info-section-element div > a {
+	font-size: 1.5rem;
+	font-weight: 400;
+	text-decoration: none;
+	align-self: center;
+	color: #00bcd4;
+}

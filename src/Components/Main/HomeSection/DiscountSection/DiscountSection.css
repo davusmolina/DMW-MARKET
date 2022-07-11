@@ -1,0 +1,45 @@
+.discountSection {
+	position: relative;
+
+	width: 100%;
+	height: 50vh;
+}
+
+.loadingImagesDiscount {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: rgb(215, 215, 215);
+	font-size: 4rem;
+}
+
+.discountSection img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.btnChangeImgContainer {
+	position: absolute;
+	z-index: 1;
+	top: 35%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 30%;
+}
+
+.btnChangeImg {
+	background-color: transparent;
+	border: none;
+	font-size: 6rem;
+	color: transparent;
+}
+.btnChangeImg:hover {
+	color: rgb(124, 124, 124);
+}

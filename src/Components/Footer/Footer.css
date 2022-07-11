@@ -1,0 +1,27 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: 100vw;
+	height: 15vh;
+	margin-top: 50px;
+	padding: 20px;
+
+	font-size: 1.2rem;
+	background-color: #ebebeb;
+
+	border-top: 0.05rem solid black;
+}
+
+.footer-list {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	list-style: none;
+}
+
+.footer-list li {
+	margin-right: 20px;
+}
