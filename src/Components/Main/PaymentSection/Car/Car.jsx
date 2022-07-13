@@ -27,7 +27,7 @@ const Car = () => {
 										onClick={() => {
 											deletProductFromCar(product);
 										}}>
-										X
+										Eliminar
 									</button>
 								</div>
 							</div>

@@ -42,7 +42,7 @@ function ProductInfo({ product, loading, error }) {
 						<button
 							onClick={() => {
 								setShowModal(true);
-								console.log('hola');
+								agregarAlCarrito(product);
 							}}>
 							Comprar ahora
 						</button>
