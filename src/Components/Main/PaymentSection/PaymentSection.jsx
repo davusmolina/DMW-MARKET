@@ -20,7 +20,7 @@ const PaymentSection = () => {
 					}}>
 					Pagar
 				</button>
-				<Pay></Pay>
+				<Pay />
 			</div>
 			<Car></Car>
 		</article>

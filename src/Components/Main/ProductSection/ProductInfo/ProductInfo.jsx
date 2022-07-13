@@ -1,9 +1,10 @@
 import React from 'react';
 import './ProductInfo.css';
 import { Context } from '../../../Context/Context.jsx';
+import { Link } from 'react-router-dom';
 
 function ProductInfo({ product, loading, error }) {
-	const { agregarAlCarrito } = React.useContext(Context);
+	const { agregarAlCarrito, setShowModal } = React.useContext(Context);
 
 	if (loading) {
 		return <div>Cargando...</div>;
@@ -37,7 +38,15 @@ function ProductInfo({ product, loading, error }) {
 						}}>
 						Agregar al carrito
 					</button>
-					<button>Comprar ahora</button>
+					<Link to='/carPay'>
+						<button
+							onClick={() => {
+								setShowModal(true);
+								console.log('hola');
+							}}>
+							Comprar ahora
+						</button>
+					</Link>
 				</div>
 			</article>
 		);

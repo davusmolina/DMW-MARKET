@@ -8,7 +8,7 @@ function DiscountSection() {
 	const [error, setError] = React.useState('');
 	const [imgInfo, setImgInfo] = React.useState([]);
 	const [loading, setLoading] = React.useState(true);
-	const [index, setIndex] = React.useState(0);
+	const [translate, setTranslate] = React.useState(0);
 
 	React.useEffect(() => {
 		async function cargarImagenesDescuento() {
@@ -27,6 +27,7 @@ function DiscountSection() {
 				});
 
 				setImagesProductsDiscount(imagesInfo);
+				setLoading(false);
 			} catch (error) {
 				setError(error);
 			}
@@ -34,28 +35,31 @@ function DiscountSection() {
 		cargarImagenesDescuento();
 	}, []);
 
-	function cambiarIndex(accion) {
-		if (accion === 'SUMAR') {
-			index >= 5 ? setIndex(0) : setIndex(index + 1);
-		} else if (accion === 'RESTAR') {
-			index <= 0 ? setIndex(5) : setIndex(index - 1);
-		}
-		setImgInfo([
-			imagesProductsDiscount[index][0],
-			imagesProductsDiscount[index][1],
-		]);
-	}
-
 	React.useEffect(() => {
 		const idSetInterval = setInterval(() => {
-			cambiarIndex('SUMAR');
-			setLoading(false);
+			nextImage();
 		}, 5000);
 		return () => clearInterval(idSetInterval);
-	}, [imagesProductsDiscount]);
+	}, [translate]);
 
+	function nextImage() {
+		if (translate > 66) {
+			setTranslate(0);
+		} else {
+			setTranslate(translate + 100 / 6);
+		}
+		console.log(translate);
+	}
+	function previwImage() {
+		if (translate < 16) {
+			setTranslate(66.66);
+		} else {
+			setTranslate(translate - 100 / 6);
+		}
+		console.log(translate);
+	}
 	return (
-		<article className='discountSection'>
+		<article className='carrousel'>
 			{!error && !!loading && (
 				<div className='loadingImagesDiscount'>
 					<span>Cargando...</span>
@@ -65,20 +69,31 @@ function DiscountSection() {
 			)}
 			{error && <h2>No hemos podido cargar las imagenes de descuento</h2>}
 			{!!imagesProductsDiscount && !loading && imgInfo != [] && (
-				<img src={imgInfo[0]} alt={imgInfo[1]} />
+				<div
+					className='grande'
+					style={{ transform: `translateX(-${translate}%)` }}>
+					{' '}
+					{imagesProductsDiscount.map((image) => {
+						return <img key={image[1]} src={image[0]} alt={image[1]} />;
+					})}
+				</div>
 			)}
+			{/* <ul className='puntos'>
+				<li className='punto activo'></li>
+				<li className='punto'></li>
+			</ul> */}
 			<div className='btnChangeImgContainer'>
 				<button
 					className='btnChangeImg'
 					onClick={() => {
-						cambiarIndex('RESTAR');
+						previwImage();
 					}}>
 					&#8606;
 				</button>
 				<button
 					className='btnChangeImg'
 					onClick={() => {
-						cambiarIndex('SUMAR');
+						nextImage();
 					}}>
 					&#8608;
 				</button>
