@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Categories.css';
+// import './Categories.css';
 
 function Categories() {
 	const [categories, setCategories] = React.useState([]);
@@ -28,7 +28,7 @@ function Categories() {
 			)}
 			{!!categories && (
 				<nav className='navigation-header'>
-					<ul className='categories'>
+					<ul>
 						{categories.map((category) => {
 							return (
 								<li key={category}>

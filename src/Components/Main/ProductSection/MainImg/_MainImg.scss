@@ -1,0 +1,33 @@
+.imgsProductContainer {
+	@include center-content;
+	margin: 3vh 0;
+	img {
+		width: 60vw;
+		min-width: 300px;
+		height: 60vh;
+		margin-bottom: 20px;
+		padding: 0;
+
+		object-fit: scale-down;
+	}
+	p {
+		width: 60vw;
+
+		font-size: $font-size-mediano;
+		font-weight: $font-weight-light;
+		text-align: justify;
+		color: $color-oscuro;
+		background-color: $color-claro;
+	}
+}
+@media screen and(max-width: 800px) {
+	.imgsProductContainer {
+		img {
+			width: 90vw;
+			// height: 100vh;
+		}
+		p {
+			width: 90vw;
+		}
+	}
+}

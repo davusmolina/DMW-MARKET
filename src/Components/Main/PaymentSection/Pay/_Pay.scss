@@ -1,0 +1,82 @@
+.pay-modal {
+	@include center-content;
+
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	> div {
+		@include center-content;
+		justify-content: flex-start;
+
+		width: 50vw;
+		height: 90vh;
+
+		background: $color-claro;
+
+		button {
+			position: relative;
+			right: -40%;
+			top: -10vh;
+
+			width: 30px;
+			height: 30px;
+
+			border: none;
+			background-color: $color-primario;
+			border-radius: 50%;
+			cursor: pointer;
+
+			color: red;
+			font-size: $font-size-pequeño;
+			font-weight: $font-weight-semi-bold;
+		}
+		.total {
+			@include center-content;
+			position: fixed;
+			top: 15vh;
+
+			background: $color-claro;
+			margin-bottom: 30px;
+
+			h2 {
+				font-size: 3vw;
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+		}
+		ul {
+			@include center-content;
+			align-items: space-evenly;
+
+			list-style: none;
+			li {
+				width: 100%;
+				height: 100%;
+				padding: 10px;
+
+				background-color: $color-claro;
+				font-size: $font-size-pequeño;
+				color: $color-discount;
+
+				a {
+					color: $color-variacion;
+				}
+			}
+		}
+	}
+	@media screen and(max-width: 800px) {
+		> div {
+			width: 80vw;
+			height: 80vh;
+
+			font-size: $font-size-grande;
+		}
+	}
+}

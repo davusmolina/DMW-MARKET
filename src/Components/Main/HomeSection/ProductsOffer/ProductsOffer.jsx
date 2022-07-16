@@ -1,6 +1,6 @@
 //crea un componente react que hace una peticion a una api por productos y genera una tarjeta con cada producto
 import React from 'react';
-import './productsOffer.css';
+// import './productsOffer.css';
 import { Link } from 'react-router-dom';
 
 function getRandomInt(min, max) {

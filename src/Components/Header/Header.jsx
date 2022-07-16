@@ -1,4 +1,5 @@
 import React from 'react';
+// import './Header.css';
 
 import { Link } from 'react-router-dom';
 import { BarraBusqueda } from './BarraBusqueda/BarraBusqueda';
@@ -9,26 +10,17 @@ import logoImg from '../../../Images/dmwLogo.png';
 import ubicacionImg from '../../../Images/ubicacion.png';
 import carrito from '../../../Images/carrito.png';
 
-import './Header.css';
 function Header() {
 	const { productsInCar } = React.useContext(Context);
 	return (
 		<header className='header'>
 			<div className='header__leftBlock'>
-				<div className='logoContainer'>
-					<Link to='/' className='logoContainer'>
-						<img
-							className='logoContainer__logo'
-							src={logoImg}
-							alt='Logo del market place'></img>
-					</Link>
-				</div>
-				<div className='ubicacionContainer'>
-					<img src={ubicacionImg} />
-					<h2>
-						<Link to=''>Ingresa tu ubicación</Link>
-					</h2>
-				</div>
+				<Link to='/' className='logoContainer'>
+					<img
+						className='logoContainer__logo'
+						src={logoImg}
+						alt='Logo del market place'></img>
+				</Link>
 			</div>
 			<div className='header__centralBlock'>
 				<BarraBusqueda />
@@ -40,25 +32,28 @@ function Header() {
 				</h2>
 				<ul>
 					<li>
-						<Link to=''>Registrate</Link>
+						<Link to=''>REGISTRATE</Link>
 					</li>
 					<li>
-						<Link to=''>Ingresa</Link>
+						<Link to=''>INGRESA</Link>
 					</li>
 					<li>
-						<Link to=''>MisCompras</Link>
+						<Link to=''>MIS COMPRAS</Link>
 					</li>
-					<li>
-						<Link to='/carPay'>
-							<div>
-								<span className='count-car'>
-									{productsInCar < 1 ? 0 : productsInCar.length}{' '}
-								</span>
-								<img src={carrito} alt='Carrito de compras' />
-							</div>
-						</Link>
-					</li>
+					{/* <li>
+						
+					</li> */}
 				</ul>
+			</div>
+
+			<span>&#9776;</span>
+			<div className='car'>
+				<Link to='/carPay'>
+					<h3 className='count-car'>
+						{productsInCar < 1 ? 0 : productsInCar.length}
+					</h3>
+					<img src={carrito} alt='Carrito de compras' />
+				</Link>
 			</div>
 		</header>
 	);

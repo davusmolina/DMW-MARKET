@@ -1,5 +1,5 @@
 import React from 'react';
-import './PaymentSection.css';
+// import './PaymentSection.css';
 
 import { Context } from '../../Context/Context.jsx';
 import { Pay } from './Pay/Pay.jsx';
@@ -11,9 +11,7 @@ const PaymentSection = () => {
 		<article className='payment-section'>
 			<div>
 				<h1>Productos en tu carrito: </h1>
-				<p className='payment-section--total-pay'>
-					Total a pagar: ${totalPay}{' '}
-				</p>
+				<p>Total a pagar: ${totalPay} </p>
 				<button
 					onClick={() => {
 						setShowModal(true);

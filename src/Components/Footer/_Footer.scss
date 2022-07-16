@@ -1,0 +1,36 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: 100vw;
+	height: 15vh;
+	padding: 1vh;
+
+	overflow-x: hidden;
+	overflow-y: hidden;
+
+	font-size: 1.2rem;
+	background-color: $color-primario;
+	border-top: 0.05rem solid $color-oscuro;
+
+	ul {
+		@include center-content;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+		list-style: none;
+		margin-bottom: 2vw;
+	}
+
+	li {
+		margin-right: 2vw;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.footer {
+		flex-direction: column;
+	}
+}

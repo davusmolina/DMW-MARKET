@@ -1,0 +1,35 @@
+.barraBusquedaContainer {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+	margin-left: 5vw;
+
+	background-color: $color-claro;
+
+	img {
+		height: 2vh;
+	}
+	input {
+		height: 3vh;
+		width: 100%;
+
+		border: none;
+		color: $font-color;
+		border-right: 1px solid $color-oscuro;
+		padding-left: 15px;
+	}
+
+	input::placeholder {
+		font-family: $fuente-primaria;
+		font-weight: $font-weight-bold;
+	}
+
+	@media screen and(max-width: 800px) {
+		margin-right: 0;
+		width: 50vw;
+		input {
+			height: 5vh;
+		}
+	}
+}

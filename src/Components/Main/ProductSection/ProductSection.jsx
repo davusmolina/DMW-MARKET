@@ -1,5 +1,5 @@
 import React from 'react';
-import './productSection.css';
+// import './productSection.css';
 import { useParams } from 'react-router-dom';
 
 import { MainImg } from './MainImg/MainImg.jsx';

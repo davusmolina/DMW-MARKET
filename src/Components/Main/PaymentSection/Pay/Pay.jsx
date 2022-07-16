@@ -1,8 +1,7 @@
 import React from 'react';
-import './Pay.css';
+// import './Pay.css';
 
 import { Context } from '../../../Context/Context.jsx';
-import { PaymentMethods } from '../../HomeSection/PaymentChannels/PaymentMethods.jsx';
 
 export function Pay() {
 	const { totalPay, showModal, setShowModal } = React.useContext(Context);
@@ -11,19 +10,20 @@ export function Pay() {
 	} else {
 		return (
 			<article className='pay-modal'>
-				<div className='pay-modal--first-element'>
-					<h2>
-						A pagar: <br /> ${totalPay}
-					</h2>
+				<div className='pay-modal-container'>
 					<button
 						onClick={() => {
 							setShowModal(false);
 						}}>
 						X
 					</button>
-					<article className=''>
-						<ul className='payment-method'>
-							<li className=''>
+					<div className='total'>
+						<h2>A pagar:</h2>
+						<h2>{totalPay}</h2>
+					</div>
+					<article className='payment-methods'>
+						<ul>
+							<li>
 								<div>
 									<span>💳</span>
 								</div>
@@ -32,7 +32,7 @@ export function Pay() {
 									<a href=''>Saber mas</a>
 								</div>
 							</li>
-							<li className=''>
+							<li>
 								<div>
 									<span>🏦</span>
 								</div>
@@ -41,7 +41,7 @@ export function Pay() {
 									<a href=''>Saber mas</a>
 								</div>
 							</li>
-							<li className=''>
+							<li>
 								<div>
 									<span>💵</span>
 								</div>
@@ -50,7 +50,7 @@ export function Pay() {
 									<a href=''>Saber mas</a>
 								</div>
 							</li>
-							<li className=''>
+							<li>
 								<div>
 									<span>➕</span>
 								</div>

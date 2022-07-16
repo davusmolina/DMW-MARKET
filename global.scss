@@ -1,0 +1,33 @@
+@import './src/index.scss';
+
+//Header Components
+@import './src/Components/Header/Header.scss';
+@import './src/Components/Header/BarraBusqueda/BarraBusqueda.scss';
+@import './src/Components/Header/Categories/Categories.scss';
+
+//Footer Components
+@import './src/Components/Footer/Footer.scss';
+
+//Body Components
+@import './src/Components/Main/Main';
+
+//Categories
+@import './src/Components/Main/CategoriesSection/CategorySection.scss';
+@import './src/Components/Main/CategoriesSection/Product/Product.scss';
+
+//Home
+@import './src/Components/Main/HomeSection/Home.scss';
+@import './src/Components/Main/HomeSection/DiscountSection/DiscountSection.scss';
+@import './src/Components/Main/HomeSection/InfoSection/InfoSection.scss';
+@import './src/Components/Main/HomeSection/PaymentChannels/PaymentMethods.scss';
+@import './src/Components/Main/HomeSection/ProductsOffer/ProductsOffer.scss';
+
+//Payment
+@import './src/Components/Main/PaymentSection/PaymentSection';
+@import './src/Components/Main/PaymentSection/Pay/Pay.scss';
+@import './src/Components/Main/PaymentSection/Car/Car.scss';
+
+//Product
+@import './src/Components/Main/ProductSection/ProductSection.scss';
+@import './src/Components/Main/ProductSection//MainImg/MainImg.scss';
+@import './src/Components/Main/ProductSection/ProductInfo/ProductInfo.scss';

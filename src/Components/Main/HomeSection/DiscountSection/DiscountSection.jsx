@@ -1,12 +1,11 @@
 import React from 'react';
-import './DiscountSection.css';
+// import './DiscountSection.css';
 
 function DiscountSection() {
 	const [imagesProductsDiscount, setImagesProductsDiscount] = React.useState(
 		[]
 	);
 	const [error, setError] = React.useState('');
-	const [imgInfo, setImgInfo] = React.useState([]);
 	const [loading, setLoading] = React.useState(true);
 	const [translate, setTranslate] = React.useState(0);
 
@@ -68,7 +67,7 @@ function DiscountSection() {
 				</div>
 			)}
 			{error && <h2>No hemos podido cargar las imagenes de descuento</h2>}
-			{!!imagesProductsDiscount && !loading && imgInfo != [] && (
+			{!!imagesProductsDiscount && !loading && (
 				<div
 					className='grande'
 					style={{ transform: `translateX(-${translate}%)` }}>
@@ -78,24 +77,20 @@ function DiscountSection() {
 					})}
 				</div>
 			)}
-			{/* <ul className='puntos'>
-				<li className='punto activo'></li>
-				<li className='punto'></li>
-			</ul> */}
 			<div className='btnChangeImgContainer'>
 				<button
 					className='btnChangeImg'
 					onClick={() => {
 						previwImage();
 					}}>
-					&#8606;
+					&#8592;
 				</button>
 				<button
 					className='btnChangeImg'
 					onClick={() => {
 						nextImage();
 					}}>
-					&#8608;
+					&#8594;
 				</button>
 			</div>
 		</article>

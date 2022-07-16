@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css';
+// import './Home.css';
 
 import { PaymentMethods } from './PaymentChannels/PaymentMethods.jsx';
 import { DiscountSection } from './DiscountSection/DiscountSection.jsx';

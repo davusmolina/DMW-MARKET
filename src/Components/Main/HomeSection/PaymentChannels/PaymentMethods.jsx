@@ -1,11 +1,11 @@
 //Un componente que genera una lista de metodos de pago
 import React from 'react';
-import './PaymentMethods.css';
+// import './PaymentMethods.css';
 
 function PaymentMethods() {
 	return (
 		<article className='paymentMethods'>
-			<ul className='paymentMethods--container'>
+			<ul>
 				<li className='paymentMethod'>
 					<div>
 						<span>💳</span>
@@ -39,7 +39,7 @@ function PaymentMethods() {
 					</div>
 
 					<div>
-						<p>Mas metodos de pago</p>
+						<p>Mas metodos</p>
 						<a href=''>Saber mas</a>
 					</div>
 				</li>

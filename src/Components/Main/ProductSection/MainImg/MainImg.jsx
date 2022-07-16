@@ -1,5 +1,5 @@
 import React from 'react';
-import './MainImg.css';
+// import './MainImg.css';
 
 function MainImg({ product, error, loading }) {
 	if (loading) {
@@ -8,14 +8,10 @@ function MainImg({ product, error, loading }) {
 		return <div>Error</div>;
 	} else {
 		return (
-			<article>
-				<div className='imgsProductContainer'>
-					<figure>
-						<img src={product[0]} alt={product[1]} />
-					</figure>
-					<figcaption>{product[2]}</figcaption>
-				</div>
-			</article>
+			<div className='imgsProductContainer'>
+				<img src={product[0]} alt={product[1]} />
+				<p>{product[2]}</p>
+			</div>
 		);
 	}
 }

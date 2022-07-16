@@ -7,15 +7,15 @@
 	margin-top: 50px;
 }
 .products-offer h2 {
-	font-size: 3rem;
+	font-size: $font-size-mediano;
 	font-weight: 100;
+	text-align: center;
 }
 .products-offer-container {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	overflow-x: auto;
-	overflow-y: hidden;
 
 	margin-top: 30px;
 	margin-left: 40px;

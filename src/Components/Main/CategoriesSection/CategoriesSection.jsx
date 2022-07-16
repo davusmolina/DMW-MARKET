@@ -1,5 +1,6 @@
 import React from 'react';
-import './CategorySection.css';
+// import './CategorySection.css';
+
 import { ProductComponent } from './Product/Product.jsx';
 import { useParams } from 'react-router-dom';
 

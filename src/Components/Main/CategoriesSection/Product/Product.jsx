@@ -1,5 +1,5 @@
 import React from 'react';
-import './Product.css';
+// import './Product.css';
 import { Link } from 'react-router-dom';
 
 function ProductComponent({ discount, category }) {
@@ -39,9 +39,9 @@ function ProductComponent({ discount, category }) {
 				{products.map((productInfo) => {
 					return (
 						<Link to={`/products/${productInfo.id}`}>
-							<div className='product-card-category' key={productInfo.id}>
+							<div key={productInfo.id} className='product-card-category'>
 								<img src={productInfo.image} alt={productInfo.title} />
-								<div className='product-card-category--info'>
+								<div>
 									<h3>{productInfo.title} </h3>
 									<div>
 										<p className='product-info--rating'>

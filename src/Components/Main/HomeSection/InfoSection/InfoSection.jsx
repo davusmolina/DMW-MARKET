@@ -1,5 +1,5 @@
 import React from 'react';
-import './infoSection.css';
+// import './infoSection.css';
 
 const InfoSection = () => {
 	return (
@@ -9,11 +9,10 @@ const InfoSection = () => {
 				<h3>Paga con tarjeta o en efectivo</h3>
 				<div>
 					<p>
-						Con Mercado Pago, paga en cuotas y aprovecha la comodidad de
-						financiación que te da tu banco, o hazlo con efectivo en puntos de
-						pago. ¡Y siempre es seguro!
+						Paga en cuotas y aprovecha la comodidad de financiación que te da tu
+						banco, o hazlo con efectivo en puntos de pago. ¡Y siempre es seguro!
 					</p>
-					<a href=''>Como pagar con Mercado pago</a>
+					<a href=''>Como pagar</a>
 				</div>
 			</div>
 			<div className='info-section-element'>

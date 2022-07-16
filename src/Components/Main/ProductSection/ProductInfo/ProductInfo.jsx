@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProductInfo.css';
+// import './ProductInfo.css';
 import { Context } from '../../../Context/Context.jsx';
 import { Link } from 'react-router-dom';
 

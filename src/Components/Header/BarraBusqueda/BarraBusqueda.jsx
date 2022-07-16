@@ -1,6 +1,6 @@
 import React from 'react';
 import lupaImg from '../../../../Images/lupa.png';
-import './BarraBusqueda.css';
+// import './BarraBusqueda.css';
 
 function BarraBusqueda() {
 	return (

@@ -1,5 +1,6 @@
 import React from 'react';
-import './Car.css';
+// import './Car.css';
+
 import { Context } from '../../../Context/Context.jsx';
 
 const Car = () => {

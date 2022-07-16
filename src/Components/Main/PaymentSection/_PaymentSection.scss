@@ -1,0 +1,62 @@
+.payment-section {
+	display: flex;
+	flex-direction: row;
+	align-items: space-evenly;
+	justify-content: space-evenly;
+
+	padding: 0;
+	margin: 0;
+
+	background-color: $color-claro;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	> div {
+		width: 40vw;
+
+		h1 {
+			margin: 10vw 5vw 0 5vw;
+
+			font-size: $font-size-mediano;
+		}
+
+		> p {
+			margin: 10vw 5vw 0 5vw;
+			font-size: $font-size-mediano;
+		}
+	}
+	button {
+		width: 150px;
+		height: 70px;
+		margin: 10vw 5vw;
+
+		@include button-style;
+	}
+	@media screen and(max-width: 800px) {
+		width: 100vw;
+		> div {
+			overflow-y: hidden;
+			position: relative;
+			top: 0;
+		}
+	}
+	@media screen and(max-width: 400px) {
+		flex-direction: column;
+		h1 {
+			margin: 5vw auto;
+		}
+		button {
+			width: 30vw;
+			height: 8vh;
+			margin: 10vw 5vw;
+		}
+		h1 {
+			margin: 5vw 5vw 0 5vw;
+		}
+
+		> p {
+			margin: 5vw 5vw 0 5vw;
+		}
+	}
+}
