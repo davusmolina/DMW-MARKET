@@ -7,11 +7,20 @@ import { Categories } from './Categories/Categories';
 import { Context } from '../Context/Context.jsx';
 
 import logoImg from '../../../Images/dmwLogo.png';
-import ubicacionImg from '../../../Images/ubicacion.png';
 import carrito from '../../../Images/carrito.png';
 
 function Header() {
 	const { productsInCar } = React.useContext(Context);
+	const [showHeaderRight, setShowHeaderRight] = React.useState(false);
+
+	React.useEffect(() => {
+		if (showHeaderRight === true) {
+			setTimeout(() => {
+				setShowHeaderRight(false);
+			}, 5000);
+		}
+	}, [showHeaderRight]);
+
 	return (
 		<header className='header'>
 			<div className='header__leftBlock'>
@@ -26,7 +35,10 @@ function Header() {
 				<BarraBusqueda />
 				<Categories />
 			</div>
-			<div className='header__rightBlock'>
+			<div
+				className={
+					showHeaderRight ? 'header__rightBlock-smScreen' : 'header__rightBlock'
+				}>
 				<h2>
 					<Link to=''>&#10024; OFERTA DEL DIA 50% OFF &#10024;</Link>
 				</h2>
@@ -40,13 +52,15 @@ function Header() {
 					<li>
 						<Link to=''>MIS COMPRAS</Link>
 					</li>
-					{/* <li>
-						
-					</li> */}
 				</ul>
 			</div>
 
-			<span>&#9776;</span>
+			<span
+				onClick={() => {
+					setShowHeaderRight(!showHeaderRight);
+				}}>
+				&#9776;
+			</span>
 			<div className='car'>
 				<Link to='/carPay'>
 					<h3 className='count-car'>

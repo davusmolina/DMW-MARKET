@@ -10,6 +10,10 @@ import { PaymentSection } from './PaymentSection/PaymentSection.jsx';
 function Main() {
 	return (
 		<main>
+			{/* <div className='comeBack'>
+				{' '}
+				<h2>{'<'}</h2>{' '}
+			</div> */}
 			<Routes>
 				<Route exact path='products/:id' element={<ProductSection />} />
 				<Route

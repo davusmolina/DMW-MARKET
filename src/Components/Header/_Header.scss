@@ -5,16 +5,13 @@
 
 	width: 100vw;
 	height: 15vh;
+	padding-top: 3vh;
 
 	background-color: $color-variacion;
 	overflow-x: hidden;
 
 	> span {
 		display: none;
-		font-size: $font-size-grande;
-		font-weight: $font-weight-semi-bold;
-		color: $color-oscuro;
-		margin-right: 3vw;
 	}
 }
 
@@ -30,20 +27,32 @@
 
 .header__centralBlock {
 	@include center-content;
-	justify-content: space-evenly;
+	justify-content: space-between;
+	align-items: flex-start;
 
 	height: 100%;
 	width: 45vw;
 	margin-right: 5vw;
 }
 
-.header__rightBlock {
+.header__rightBlock,
+.header__rightBlock-smScreen {
 	@include center-content;
 	justify-content: space-evenly;
 
 	height: 15vh;
 	width: 30%;
 	margin: 0;
+
+	h2 {
+		margin: 0;
+		width: 100%;
+
+		a {
+			font-size: $font-size-mediano;
+			text-align: center;
+		}
+	}
 
 	ul {
 		display: flex;
@@ -58,31 +67,18 @@
 	li {
 		@include center-content;
 		align-items: flex-end;
-	}
-	h2 {
-		margin: 0;
-		width: 100%;
-
-		font-size: $font-size-pequeño;
-		text-align: center;
-	}
-	a {
-		text-decoration: none;
-		font-size: $font-size-extra-pequeño;
-		font-weight: $font-weight-bold;
-	}
-
-	@media screen and(max-width: 800px) {
-		display: none;
-		margin-right: 0;
-		width: 100vw;
+		a {
+			text-decoration: none;
+			font-size: $font-size-pequeño;
+			font-weight: $font-weight-bold;
+		}
 	}
 }
 
 .car {
 	position: absolute;
-	top: -0.5vh;
-	right: -0.3vw;
+	top: 1.5vh;
+	right: 0.8vw;
 
 	img {
 		height: 3vw;
@@ -100,32 +96,119 @@
 @media screen and(max-width: 800px) {
 	.header {
 		> span {
-			display: inline-block;
+			display: flex;
+			justify-content: center;
+
+			height: 15vh;
+			margin-right: 3vw;
+
+			font-size: $font-size-extra;
+			font-weight: $font-weight-semi-bold;
+			color: $color-oscuro;
+			text-justify: center;
 		}
 	}
 	.header__leftBlock {
 		display: none;
 	}
-	.car {
-		position: static;
-		// font-size: $font-size-mediano;
+	.header__rightBlock {
+		display: none;
+	}
+	.header__rightBlock-smScreen {
 		@include center-content;
+		width: 100vw;
+		height: 15vh;
+
+		position: absolute;
+		top: 15vh;
+		z-index: 1;
+		text-align: center;
+
+		background-color: $color-claro;
+
+		h2 {
+			a {
+				font-size: $font-size-grande;
+				font-weight: $font-weight-bold;
+			}
+		}
+		ul {
+			@include center-content;
+			flex-direction: column;
+		}
+		li {
+			a {
+				font-size: $font-size-mediano;
+				font-weight: $font-weight-semi-bold;
+			}
+		}
+	}
+	.car {
+		@include center-content;
+		justify-content: flex-start;
+
+		height: 15vh;
+		margin-right: 3vw;
+		margin-bottom: 2vh;
+
+		position: static;
 		img {
-			height: 9vw;
+			height: 7vw;
+			margin: 0;
 		}
 		.count-car {
 			position: relative;
-			bottom: -0.4em;
+			bottom: -0.7em;
 			left: 0em;
-			font-size: $font-size-grande;
+
+			margin: 0;
+
+			font-size: 2.5rem;
+			font-weight: $font-weight-bold;
 		}
 	}
 }
 
 @media screen and(max-width: 400px) {
+	.header {
+		> span {
+			font-size: $font-size-grande;
+			margin-bottom: 1vh;
+		}
+	}
+
+	.header__rightBlock-smScreen {
+		// @include center-content;
+		// width: 100vw;
+		// height: 15vh;
+
+		// position: absolute;
+		// top: 15vh;
+		// z-index: 1;
+
+		// background-color: $color-claro;
+
+		h2 {
+			a {
+				font-size: $font-size-mediano;
+				font-weight: $font-weight-bold;
+			}
+		}
+		li {
+			a {
+				font-size: $font-size-pequeño;
+				font-weight: $font-weight-normal;
+			}
+		}
+	}
+
 	.car {
+		img {
+			height: 9vw;
+		}
 		.count-car {
-			font-size: $font-size-mediano;
+			bottom: -0.7em;
+			font-size: $font-size-pequeño;
 		}
 	}
 }

@@ -29,17 +29,22 @@ function ProductComponent({ discount, category }) {
 	}, [category]);
 
 	if (loading) {
-		return <div>Cargando...</div>;
+		return <h2 className='loading'>Cargando Productos de esta categoria...</h2>;
 	}
 	if (error) {
-		return <div>Error</div>;
+		return (
+			<div className='cargando'>
+				Parece que ha ocurrido un error, por favor intentelo de nuevo o despues
+				de un tiempo
+			</div>
+		);
 	} else {
 		return (
 			<article className={`products-category-container}`}>
 				{products.map((productInfo) => {
 					return (
-						<Link to={`/products/${productInfo.id}`}>
-							<div key={productInfo.id} className='product-card-category'>
+						<Link to={`/products/${productInfo.id}`} key={productInfo.id}>
+							<div className='product-card-category'>
 								<img src={productInfo.image} alt={productInfo.title} />
 								<div>
 									<h3>{productInfo.title} </h3>

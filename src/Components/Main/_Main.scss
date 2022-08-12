@@ -2,3 +2,21 @@ main {
 	@include center-content;
 	width: 100vw;
 }
+
+.comeBack {
+	@include center-content;
+	align-items: flex-start;
+
+	width: 100vw;
+
+	background-color: $color-claro;
+	border: none;
+
+	h2 {
+		margin-left: 5vw;
+
+		color: $font-color;
+		font-size: $font-size-grande;
+		font-weight: $font-weight-light;
+	}
+}

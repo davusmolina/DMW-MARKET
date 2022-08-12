@@ -47,7 +47,6 @@ function DiscountSection() {
 		} else {
 			setTranslate(translate + 100 / 6);
 		}
-		console.log(translate);
 	}
 	function previwImage() {
 		if (translate < 16) {
@@ -57,44 +56,54 @@ function DiscountSection() {
 		}
 		console.log(translate);
 	}
-	return (
-		<article className='carrousel'>
-			{!error && !!loading && (
-				<div className='loadingImagesDiscount'>
-					<span>Cargando...</span>
 
-					<span>&#128247;</span>
-				</div>
-			)}
-			{error && <h2>No hemos podido cargar las imagenes de descuento</h2>}
-			{!!imagesProductsDiscount && !loading && (
-				<div
-					className='grande'
-					style={{ transform: `translateX(-${translate}%)` }}>
-					{' '}
-					{imagesProductsDiscount.map((image) => {
-						return <img key={image[1]} src={image[0]} alt={image[1]} />;
-					})}
-				</div>
-			)}
-			<div className='btnChangeImgContainer'>
-				<button
-					className='btnChangeImg'
-					onClick={() => {
-						previwImage();
-					}}>
-					&#8592;
-				</button>
-				<button
-					className='btnChangeImg'
-					onClick={() => {
-						nextImage();
-					}}>
-					&#8594;
-				</button>
+	if (!error && !!loading) {
+		return (
+			<div className='loadingImagesDiscount'>
+				<span>Cargando...</span>
+				<span>&#128247;</span>
 			</div>
-		</article>
-	);
+		);
+	} else if (error) {
+		return (
+			<h2 className='error'>
+				No hemos podido cargar las imagenes de descuento :(
+			</h2>
+		);
+	} else {
+		return (
+			<article className='carrousel'>
+				{!!imagesProductsDiscount && !loading && (
+					<React.Fragment>
+						<div
+							className='grande'
+							style={{ transform: `translateX(-${translate}%)` }}>
+							{' '}
+							{imagesProductsDiscount.map((image) => {
+								return <img key={image[1]} src={image[0]} alt={image[1]} />;
+							})}
+						</div>
+						<div className='btnChangeImgContainer'>
+							<button
+								className='btnChangeImg'
+								onClick={() => {
+									previwImage();
+								}}>
+								&#8592;
+							</button>
+							<button
+								className='btnChangeImg'
+								onClick={() => {
+									nextImage();
+								}}>
+								&#8594;
+							</button>
+						</div>
+					</React.Fragment>
+				)}
+			</article>
+		);
+	}
 }
 
 export { DiscountSection };

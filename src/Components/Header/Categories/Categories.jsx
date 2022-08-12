@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function Categories() {
 	const [categories, setCategories] = React.useState([]);
 	const [error, setError] = React.useState(false);
+	const [loading, setLoading] = React.useState(true);
 	React.useEffect(() => {
 		async function cargarCategories() {
 			try {
@@ -12,6 +13,7 @@ function Categories() {
 				const data = await res.json();
 
 				setCategories(data);
+				setLoading(false);
 			} catch (error) {
 				setError(true);
 			}
@@ -21,19 +23,22 @@ function Categories() {
 
 	return (
 		<React.Fragment>
+			{loading && (
+				<h2 className='cargandoCategories'>Cargando categorias...</h2>
+			)}
 			{error && (
 				<h2 className='errorCategories'>
 					Lo sentimos no hemos podido cargar las categorias
 				</h2>
 			)}
-			{!!categories && (
+			{!!categories && !loading && (
 				<nav className='navigation-header'>
 					<ul>
 						{categories.map((category) => {
 							return (
 								<li key={category}>
 									<Link to={`products/category/${category}`}>
-										{category.toUpperCase()}
+										{category.split(' ')[0].toUpperCase()}
 									</Link>
 								</li>
 							);

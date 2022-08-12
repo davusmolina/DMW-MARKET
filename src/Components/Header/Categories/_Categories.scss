@@ -1,3 +1,10 @@
+.cargandoCategories {
+	@include center-content;
+	height: 100%;
+	width: 100%;
+
+	font-size: $font-size-mediano;
+}
 .navigation-header {
 	width: 100%;
 
@@ -7,17 +14,45 @@
 
 		width: 100%;
 		margin: 0;
-		padding: 0;
+		padding: 0 0 1vh 0;
 
 		list-style: none;
 		a {
 			text-decoration: none;
-			font-size: $font-size-extra-pequeño;
+			font-size: $font-size-mediano;
 			font-weight: $font-weight-bold;
 		}
 	}
+}
 
-	@media screen and(max-width: 800px) {
-		display: none;
+@media screen and(max-width: 800px) {
+	.cargandoCategories {
+		height: 100%;
+		width: 100vw;
+	}
+	.navigation-header {
+		ul {
+			justify-content: space-evenly;
+
+			width: 100vw;
+
+			position: absolute;
+			top: 11vh;
+			right: 0;
+			a {
+				text-decoration: none;
+				font-size: $font-size-mediano;
+				font-weight: $font-weight-bold;
+			}
+		}
+	}
+}
+@media screen and(max-width: 400px) {
+	.navigation-header {
+		ul {
+			a {
+				font-size: $font-size-pequeño;
+			}
+		}
 	}
 }

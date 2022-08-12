@@ -1,3 +1,28 @@
+.loadingImagesDiscount {
+	@include center-content;
+	flex-direction: column;
+
+	width: 110vw;
+	height: 50vh;
+
+	font-size: $font-size-extra;
+	background-color: $color-claro;
+
+	overflow-x: hidden;
+}
+.error {
+	@include center-content;
+	flex-direction: column;
+
+	width: 110vw;
+	height: 50vh;
+
+	font-size: $font-size-grande;
+	background-color: $color-claro;
+
+	overflow-x: hidden;
+}
+
 .carrousel {
 	width: 600%;
 	height: 50vh;
